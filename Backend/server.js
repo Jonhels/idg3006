@@ -7,6 +7,9 @@ const logger = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 
+// Import routes from the routes folder
+const mikrobitRoute = require("./routes/mikrobitRoute");
+
 const app = express(); // Create an express app
 app.use(logger("tiny")); // Log http requests to the console
 app.use(helmet()); // Secure the app by setting various HTTP headers
@@ -40,7 +43,11 @@ app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.send("Welcome to the server!");
 });
-// dsada
+
+// Mikrobit routes
+app.use("/api", mikrobitRoute);
+
+// Shutdown gracefully
 const gracefulShutdown = async () => {
   console.log("Shutting down gracefully...");
   await mongoose.connection.close();
