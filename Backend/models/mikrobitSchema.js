@@ -20,7 +20,17 @@ const mikrobitSchema = new mongoose.Schema({
       return this.type === "event"; // Only required if the type is 'event'
     },
   },
+  value: {
+    type: Number,
+    required: function () {
+      return this.type === "sensor"; // Only required if the type is 'sensor'
+    },
+  },
   // More here if we need to add more fields in the future
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Mikrobit = mongoose.model("Mikrobit", mikrobitSchema);
