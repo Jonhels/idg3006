@@ -41,7 +41,11 @@ app.use(cors(corsOptions));
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to the server!");
+  // send html to the frontend welcome screen, render html from file here  would be the best case scenario.
+  // Why not just make it coo
+  res.send(
+    "Welcome to the Mikrobit API!, <a href='/api/mikrobit'>Click here to see the data</a>",
+  );
 });
 
 // Mikrobit routes
