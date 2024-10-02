@@ -17,12 +17,10 @@ const mikrobitController = async (req, res) => {
     await newMikrobit.save();
 
     // Send a response to the client
-    res
-      .status(201)
-      .json({
-        message: "Mikrobit data created successfully",
-        data: newMikrobit,
-      });
+    res.status(201).json({
+      message: "Mikrobit data created successfully",
+      data: newMikrobit,
+    });
   } catch (error) {
     // If there is an error, send a response to the client
     res.status(400).json({ message: error.message });
@@ -40,5 +38,9 @@ const getAllMikrobits = async (req, res) => {
     res.status(500).json({ message: "Failed to get Mikrobit data" });
   }
 };
+
+// Sort on sensorType and timestamp
+
+// Sort on eventType and timestamp
 
 module.exports = { mikrobitController, getAllMikrobits };
