@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
+const path = require("path");
 
 // Import routes from the routes folder
 const mikrobitRoute = require("./routes/mikrobitRoute");
@@ -41,11 +42,7 @@ app.use(cors(corsOptions));
 
 // Routes
 app.get("/", (req, res) => {
-  // send html to the frontend welcome screen, render html from file here  would be the best case scenario.
-  // Why not just make it coo
-  res.send(
-    "Welcome to the Mikrobit API!, <a href='/api/mikrobit'>Click here to see the data</a>",
-  );
+  res.sendFile(path.join(__dirname, "templates", "index.html"));
 });
 
 // Mikrobit routes
