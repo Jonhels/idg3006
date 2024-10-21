@@ -1,10 +1,47 @@
 <!doctype html>
 <html>
     <head>
-        <title>My First Web Page</title>
+        <title>Mikrobit express server</title>
     </head>
     <body>
-        <h1>Welcome to my first web page!</h1>
-        <p>This is a paragraph of text.</p>
+        <h1>Welcome to the express server</h1>
+        <p>Here you can find a list of endpoints</p>
+        <p>Click on the links to get the data</p>
+        <ul>
+            <li>
+                <a href="/">Home</a></li>
+            <li>
+                <a href="/api/mikrobit">Get all mikrobit data</a></li>
+            <li>
+                <a href="/api/mikrobit/search?eventType=button_a_pressed">Filter: Button a pressed</a>
+            </li>
+            <li>
+                <<a href="/api/mikrobit/search?eventType=button_b_pressed">Filter: Button b pressed</a>
+            </li>
+            <li>
+                <a href="/api/mikrobit/search?eventType=shaken">Filter: Shaken</a>
+            </li>
+            <li>
+                <a href="/api/mikrobit/search?sensorType=light_level">Filter: Light level</a>
+            </li>
+            <li>
+                <a href="/api/mikrobit/search?sensorType=temperature">Filter: Temperature</a>
+            </li>
+            <li>
+                <a href="/api/mikrobit/search?sensorType=temperature&eventType=shaken">Filter: combined enventtype and sensortype</a>
+            </li>
+        </ul>
+        <h2>Notes: This will be removed later</h2>
+        <p>prerequisites</p>
+        <ul>
+            <li>Dry + warm = Desert (Temperature sensor (+) with humidity sensor (<b>&le; 0</b>))</li>
+            <li>Dry + cold = Antarctica (Temperature sensor (−) with humidity sensor (<b>&le; 0</b>))</li>
+            <li>Wet + warm = Tropical (Temperature sensor (+) with humidity sensor (<b>&ge; 0</b>))</li>
+        </ul>
+
+        <p>Temperature sensor and humidity sensor is the only one we need</p>
+
+        <p><i>Crash sensor for button</i></p>
+        
     </body>
 </html>
