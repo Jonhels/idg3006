@@ -29,4 +29,5 @@ GET /api/mikrobit/search?sensorType=light_level
 GET /api/mikrobit/search?sensorType=temperature&eventType=shaken
 GET /api/mikrobit/search?sensorType=temperature
 
+
 // Test5
