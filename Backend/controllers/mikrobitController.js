@@ -40,7 +40,34 @@ const getAllMikrobits = async (req, res) => {
 };
 
 // Sort on sensorType and timestamp
+const getFilteredData = async (req, res) => {
+  try {
+
+    // Extract sensorType from the request
+    const { sensorType, eventType} = req.query;
+
+    // Query the database for the sensor, this will be used to filter the data
+    const query = {};
+    // If sensorType is provided, add it to the query
+    if (sensorType) {
+      query.sensorType = sensorType;
+    }
+    // If eventType is provided, add it to the query
+    if (eventType) {
+      query.eventType = eventType;
+    }
+
+    // Fetch the sensor data from the database, sorted by timestamp
+    const filteredData = await Mikrobit.find(query).sort({timestamp: 1});
+    
+    // Return sorted data
+    res.status(200).json(filteredData)
+  } catch (error) {
+    // If error, send response to client
+    res.status(500).json({message: "Failed to get filtered data", error: error.message});
+  }
+}
 
 // Sort on eventType and timestamp
 
-module.exports = { mikrobitController, getAllMikrobits };
+module.exports = { mikrobitController, getAllMikrobits, getFilteredData };
