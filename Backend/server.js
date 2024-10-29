@@ -48,6 +48,12 @@ app.get("/", (req, res) => {
   );
 });
 
+app.get("/sab", (req, res) => {
+  res.send(
+    "Welome to my world"
+  )
+})
+
 // Mikrobit routes
 app.use("/api", mikrobitRoute);
 
