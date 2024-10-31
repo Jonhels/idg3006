@@ -1,6 +1,3 @@
-script til å lese tilkoblingen fra mikrobit til pc
+In this folder we have two scripts.
 
-Find the port the micro:bit is connected to:
-ls /dev/tty.*
-
-Får ikke testa scriptet før jeg har en mikrobit tilgjengelig
+findPort.js - This script is used to find the port number where the microbit is connected.
