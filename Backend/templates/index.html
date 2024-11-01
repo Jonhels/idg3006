@@ -1,47 +1,35 @@
 <!doctype html>
 <html>
     <head>
-        <title>Mikrobit express server</title>
+        <title>Mikrobit Express Server</title>
     </head>
     <body>
-        <h1>Welcome to the express server</h1>
-        <p>Here you can find a list of endpoints</p>
-        <p>Click on the links to get the data</p>
+        <h1>Welcome to the Mikrobit Express Server</h1>
+        <p>Here you can find a list of available endpoints:</p>
         <ul>
-            <li>
-                <a href="/">Home</a></li>
-            <li>
-                <a href="/api/mikrobit">Get all mikrobit data</a></li>
-            <li>
-                <a href="/api/mikrobit/search?eventType=button_a_pressed">Filter: Button a pressed</a>
+            <li><a href="/">Home</a></li>
+            <li><a href="/api/mikrobit">Get all Mikrobit data</a></li>
+            <li><a href="/api/mikrobit/search?eventType=button_a_pressed">Filter: Button A Pressed</a></li>
+            <li><a href="/api/mikrobit/search?eventType=button_b_pressed">Filter: Button B Pressed</a></li>
+            <li><a href="/api/mikrobit/search?eventType=click_detected">Filter: Click Detected</a></li>
+            <li><a href="/api/mikrobit/search?sensorType=light_level">Filter: Light Level</a></li>
+        </ul>
+        <h2>Notes:</h2>
+        <p>This section will be updated later.</p>
+        <h3>Sensor Types and Events</h3>
+        <ul>
+            <li>Event Types:
+                <ul>
+                    <li>button_a_pressed</li>
+                    <li>button_b_pressed</li>
+                    <li>click_detected</li>
+                </ul>
             </li>
-            <li>
-                <a href="/api/mikrobit/search?eventType=button_b_pressed">Filter: Button b pressed</a>
-            </li>
-            <li>
-                <a href="/api/mikrobit/search?eventType=shaken">Filter: Shaken</a>
-            </li>
-            <li>
-                <a href="/api/mikrobit/search?sensorType=light_level">Filter: Light level</a>
-            </li>
-            <li>
-                <a href="/api/mikrobit/search?sensorType=temperature">Filter: Temperature</a>
-            </li>
-            <li>
-                <a href="/api/mikrobit/search?sensorType=temperature&eventType=shaken">Filter: combined enventtype and sensortype</a>
+            <li>Sensor Types:
+                <ul>
+                    <li>light_level</li>
+                </ul>
             </li>
         </ul>
-        <h2>Notes: This will be removed later</h2>
-        <p>prerequisites</p>
-        <ul>
-            <li>Dry + warm = Desert (Temperature sensor (+) with humidity sensor (<b>&le; 0</b>))</li>
-            <li>Dry + cold = Antarctica (Temperature sensor (−) with humidity sensor (<b>&le; 0</b>))</li>
-            <li>Wet + warm = Tropical (Temperature sensor (+) with humidity sensor (<b>&ge; 0</b>))</li>
-        </ul>
-
-        <p>Temperature sensor and humidity sensor is the only one we need</p>
-
-        <p><i>Crash sensor for button</i></p>
-
     </body>
 </html>
