@@ -6,13 +6,11 @@ function SensorDisplay() {
   const [sensorData, setSensorData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  // Function to fetch data from the API
+  const fetchData = () => {
     setLoading(true);
     axios
-      //.get("http://localhost:4000/api/mikrobit")
-      //.get("http://localhost:4000/api/mikrobit/search?eventType=button_a_pressed")
-      //.get("http://localhost:4000/api/mikrobit/search?eventType=button_b_pressed")
-      .get("http://localhost:4000/api/mikrobit/search?sensorType=light_level")
+      .get("http://localhost:4000/api/mikrobit")
       .then((response) => {
         setSensorData(response.data);
         setLoading(false);
@@ -21,9 +19,17 @@ function SensorDisplay() {
         console.error("There was an error fetching the sensor data!", error);
         setLoading(false);
       });
-  }, []);
+  };
 
-  console.log(sensorData);
+  useEffect(() => {
+    fetchData(); // Fetch data on component mount
+
+    // Set up polling every second (1000 milliseconds)
+    const intervalId = setInterval(fetchData, 1000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="App">
@@ -36,8 +42,6 @@ function SensorDisplay() {
       ) : (
         sensorData.map((item) => (
           <div key={item._id}>
-            {" "}
-            {/* Use _id as a unique key */}
             {item.type === "sensor" ? (
               <>
                 <p>Type: {item.type}</p>
