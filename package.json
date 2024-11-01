@@ -1,0 +1,12 @@
+{
+  "name": "idg3006",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD\r =======\r # idg3006",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

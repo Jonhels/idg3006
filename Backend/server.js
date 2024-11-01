@@ -45,6 +45,12 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "templates", "index.html"));
 });
 
+app.get("/sab", (req, res) => {
+  res.send(
+    "Welome to my world"
+  )
+})
+
 // Mikrobit routes
 app.use("/api", mikrobitRoute);
 
