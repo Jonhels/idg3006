@@ -9,7 +9,10 @@ function SensorDisplay() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:4000/api/mikrobit")
+      //.get("http://localhost:4000/api/mikrobit")
+      //.get("http://localhost:4000/api/mikrobit/search?eventType=button_a_pressed")
+      //.get("http://localhost:4000/api/mikrobit/search?eventType=button_b_pressed")
+      .get("http://localhost:4000/api/mikrobit/search?sensorType=light_level")
       .then((response) => {
         setSensorData(response.data);
         setLoading(false);
