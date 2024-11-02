@@ -7,11 +7,15 @@ const logger = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
+const http = require("http");
 
 // Import routes from the routes folder
 const mikrobitRoute = require("./routes/mikrobitRoute");
+const {setupWebSocket} = require("./routes/websocketRoute");
 
 const app = express(); // Create an express app
+const server = http.createServer(app); // Websocket setup
+
 app.use(logger("tiny")); // Log http requests to the console
 app.use(helmet()); // Secure the app by setting various HTTP headers
 // Parse incoming requests to JSON
@@ -20,7 +24,7 @@ app.use(bodyParser.json());
 // Connect to the database and start the server
 dbConnect().then(() => {
     const PORT = process.env.PORT || 4000;
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
 });
@@ -46,6 +50,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Set up WebSocket and get the io instance
+const io = setupWebSocket(server);
+
 // Routes
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "templates", "index.html"));
@@ -56,7 +63,7 @@ app.get("/sab", (req, res) => {
 });
 
 // Mikrobit routes
-app.use("/api", mikrobitRoute);
+app.use("/api", mikrobitRoute(io)); // Passing 'io' instance to the routes
 
 // Shutdown gracefully
 const gracefulShutdown = async () => {
