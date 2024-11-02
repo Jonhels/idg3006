@@ -7,8 +7,9 @@ const {
 
 const router = express.Router();
 
-// Route to create new Mikrobit data (POST)
-router.post("/mikrobit", mikrobitController);
+module.exports = (io) => {
+  // Route to create new Mikrobit data (POST)
+router.post("/mikrobit", mikrobitController(io));
 
 // Route to get all Mikrobit data (GET)
 router.get("/mikrobit", getAllMikrobits);
@@ -17,4 +18,7 @@ router.get("/mikrobit", getAllMikrobits);
 router.get("/mikrobit/search", getFilteredData);
 
 // Export the router
-module.exports = router;
+return router;
+}
+
+

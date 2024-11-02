@@ -1,7 +1,7 @@
 const Mikrobit = require("../models/mikrobitSchema");
 
 // Controller to handle Mikrobit data creation
-const mikrobitController = async (req, res) => {
+const mikrobitController = (io) => async (req, res) => {
   try {
     // Get the information from the request body
     const { type, sensorType, eventType, value, sensorId } = req.body;
@@ -31,6 +31,9 @@ const mikrobitController = async (req, res) => {
 
     // Save the information to the database
     await newMikrobit.save();
+
+    // Emit the new data over websocket
+    io.emit("newMikrobitData", newMikrobit); // Notify all websicjet clients about the new data
 
     // Send a response to the client
     res.status(201).json({
