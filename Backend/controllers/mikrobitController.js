@@ -1,16 +1,32 @@
 const Mikrobit = require("../models/mikrobitSchema");
 
+// Controller to handle Mikrobit data creation
 const mikrobitController = async (req, res) => {
   try {
     // Get the information from the request body
-    const { type, sensorType, eventType, timestamp, value } = req.body;
-    // Create a new Mikrobit object, with the information from the request
+    const { type, sensorType, eventType, value, sensorId } = req.body;
+
+    // Validate the incoming data
+    if (!type) {
+      return res.status(400).json({ message: "'type' is required" });
+    }
+    if (type === "sensor" && (!sensorType || value === undefined)) {
+      return res.status(400).json({ message: "'sensorType' and 'value' are required for sensor data" });
+    }
+    if (type === "event" && !eventType) {
+      return res.status(400).json({ message: "'eventType' is required for event data" });
+    }
+    if (eventType === "click_detected" && !sensorId) {
+      return res.status(400).json({ message: "'sensorId' is required for click events" });
+    }
+
+    // Create a new Mikrobit object with the information from the request
     const newMikrobit = new Mikrobit({
       type,
       sensorType,
       eventType,
-      timestamp,
       value,
+      sensorId,
     });
 
     // Save the information to the database
@@ -42,12 +58,12 @@ const getAllMikrobits = async (req, res) => {
 // Sort on sensorType and timestamp
 const getFilteredData = async (req, res) => {
   try {
-
-    // Extract sensorType from the request
-    const { sensorType, eventType} = req.query;
+    // Extract sensorType and eventType from the request
+    const { sensorType, eventType } = req.query;
 
     // Query the database for the sensor, this will be used to filter the data
     const query = {};
+    
     // If sensorType is provided, add it to the query
     if (sensorType) {
       query.sensorType = sensorType;
@@ -58,16 +74,15 @@ const getFilteredData = async (req, res) => {
     }
 
     // Fetch the sensor data from the database, sorted by timestamp
-    const filteredData = await Mikrobit.find(query).sort({timestamp: 1});
+    const filteredData = await Mikrobit.find(query).sort({ timestamp: 1 });
     
     // Return sorted data
-    res.status(200).json(filteredData)
+    res.status(200).json(filteredData);
   } catch (error) {
     // If error, send response to client
-    res.status(500).json({message: "Failed to get filtered data", error: error.message});
+    res.status(500).json({ message: "Failed to get filtered data", error: error.message });
   }
-}
+};
 
-// Sort on eventType and timestamp
-
+// Export the controller functions
 module.exports = { mikrobitController, getAllMikrobits, getFilteredData };
