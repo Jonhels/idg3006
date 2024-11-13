@@ -13,7 +13,6 @@ html, body {
 }
 
 
-
 @keyframes busk {
     0% {
         transform: rotateZ(0deg)
@@ -41,10 +40,6 @@ html, body {
 }
 
 
-
-
-
-
 @keyframes busk4 {
     0% {
         transform: rotateZ(0deg)
@@ -66,10 +61,6 @@ html, body {
         translateZ(-1px);
     }
 }
-
-
-
-
 
 #blad2 {
     animation: sway 5s infinite;
@@ -126,15 +117,14 @@ html, body {
 
 @keyframes Mouth {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: skew(0deg);
     }
+    
     50% {
-        transform: translateY(3px) rotate(0deg);
+        transform: skew(10deg);
     }
-    60% {
-        transform: translateX(0) rotate(0deg);
-    }
+
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: skew(0deg);
     }
 }
