@@ -3,6 +3,18 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
+    
+}
+
+nav {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+nav a{
+    text-decoration: none;
+    color: brown;
 }
 
 .rainforest {
@@ -11,7 +23,6 @@ html, body {
     position: relative;
     z-index: 1;
 }
-
 
 
 @keyframes busk {
@@ -41,10 +52,6 @@ html, body {
 }
 
 
-
-
-
-
 @keyframes busk4 {
     0% {
         transform: rotateZ(0deg)
@@ -66,10 +73,6 @@ html, body {
         translateZ(-1px);
     }
 }
-
-
-
-
 
 #blad2 {
     animation: sway 5s infinite;
@@ -100,11 +103,13 @@ html, body {
 }
 
 
-#fugl2 #vinger {
+#fugl2 #vinger  {
     animation: wings 2s ease-in-out infinite;
     transform-origin: top;
     opacity: 0.6;
 }
+
+
 
 @keyframes wings {
     0% {
@@ -118,23 +123,212 @@ html, body {
     }
 }
 
-#mund_3 #nedre_mund_2 {
+/* #mund_3 #nedre_mund_2 {
     animation: Mouth 2s ease-in-out infinite;
     transform-origin: top;
     opacity: 0.6;
+} */
+/* 
+@keyframes Mouth {
+    0% {
+        transform: skew(0deg);
+    }
+    
+    50% {
+        transform: skew(10deg);
+    }
+
+    100% {
+        transform: skew(0deg);
+    }
+} */
+
+
+#falme_3 {
+    animation: flame 2s ease-in-out infinite;
+    transform-origin: top;
 }
 
-@keyframes Mouth {
+
+@keyframes flame {
     0% {
         transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(3px) rotate(0deg);
-    }
-    60% {
-        transform: translateX(0) rotate(0deg);
+        transform: translateY(1px) rotate(-1deg);
     }
     100% {
         transform: translateY(0) rotate(0deg);
     }
 }
+
+
+
+#termo #varm_n_3 {
+    animation: flame 2s ease-in-out infinite;
+    transform-origin: top;
+}
+
+
+/* #fugl_i_himmelen  {
+    animation: moveleft 1s linear forwards, fall 2s linear 1s forwards;
+    transform-origin: top;
+    position: relative;
+    display: flex;
+    left: 90px;
+} */
+
+@keyframes moveleft {
+    from {
+        transform: translateX(0);
+    }
+        to {
+            transform: translateX(-800px);
+        }
+}
+
+
+
+#flameBurn2 {
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+#falme_3, #flame {
+    animation: flameMovement 2s ease-in-out infinite;
+}
+
+#flame #flameBurn2 {
+    animation: flameDisappear 2s linear infinite;
+    opacity: 0.5;
+    transform-origin: 45% 45%;
+}
+
+#flame{
+    filter: drop-shadow(7px 6px 8px rgba(255, 27, 27, 0.5));
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-name: shadowMovement;
+    position: relative;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shadowMovement{
+    0%   {
+        filter: drop-shadow(7px 6px 8px rgba(255, 27, 27, 0.5));
+        left: 0px;
+        top: 0px;
+    }
+    25%  {
+        filter: drop-shadow(7px 6px 8px rgba(106, 2, 2, 0.5));
+        left: 200px;
+        top: 0px;
+    }
+    100% {
+        filter: drop-shadow(7px 6px 8px rgba(255, 27, 27, 0.5));
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes flameMovement {
+    0%, 100%{
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(0.98, 1.0) translateY(2px) rotate(-1deg);
+        }
+}
+
+@keyframes flameDisappear {
+    0% {
+        transform: translate(0) rotate(180deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-10px, -40px) rotate(180deg);
+        opacity: 0;
+        }
+}
+
+
+
+
+#himmelFugl #Vector_12 {
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}
+
+@keyframes example {
+    0%   {fill:red; left:0px; top:0px;}
+    25%  {fill:yellow; left:200px; top:0px;}
+    100% {fill:red; left:0px; top:0px;}
+  }
+
+@keyframes wingsSky {
+    0% {
+        transform: skew(-40deg);
+    }
+
+    100% {
+        transform: skew(50deg);
+    }
+}
+
+
+@keyframes fall {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+}
+
+
+/* Flames */
+#flameContainer #flame-particles2{
+    position: relative;
+    animation: particles 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes particles {
+    0% {
+        transform: rotateZ(0deg)
+        translateZ(-1px);
+    }
+    25% {
+        transform: rotateZ(-3deg)
+        translateZ(-1px);
+    }
+
+    50% {
+        transform: rotateZ(3deg)
+        translateZ(-1px);
+    }
+    
+    75% {
+        transform: rotateZ(-1deg)
+        translateZ(-1px);
+    }
+
+    100% {
+        transform: rotateZ(0deg)
+        translateZ(-1px);
+    }
+}
+
+
+
+
+
+
+
+
+
+

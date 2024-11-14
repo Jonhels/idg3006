@@ -1,0 +1,43 @@
+
+#palme_1{
+    animation: palme 5s infinite;
+    transform-origin: bottom;
+    position: relative;
+    will-change: transform;
+}
+
+@keyframes palme {
+    0% {
+        transform: skew(0deg);
+    }
+    
+    50% {
+        transform: skew(2deg);
+    }
+
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+#palme_1 {
+    animation: palm 5s infinite;
+    transform-origin: bottom;
+    position: relative;
+    will-change: transform;
+}
+
+
+@keyframes palm {
+    0% {
+        transform: skew(0deg);
+    }
+    
+    50% {
+        transform: skew(2deg);
+    }
+
+    100% {
+        transform: skew(0deg);
+    }
+}

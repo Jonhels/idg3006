@@ -4,19 +4,26 @@ import "./rainforest.css";
 // import Forestview from "./BackgroundForest";
 // import Bush1 from "./Bush";
 import RainforestSVG from "./RainforestSVG";
+import BurningForestSVG from "./BurningForest";
+
 
 
 
 const Rainforest = () => {
     return (
-        <div className="rainforest">
-            <h2>Welcome to regnskogen</h2>
-            {/* <Forestview   />
-            <BirdBlue   />
-            <Bush1 /> */}
-            <RainforestSVG />
-            <blad  />
-        </div>
+            <div className="rainforest">
+                {/* <h2>Welcome to regnskogen</h2> */}
+                {/* <Forestview   />
+                <BirdBlue   />
+                <Bush1 /> */}
+                {/* <RainforestSVG /> */}
+                {/* Conditional rendering */}
+                {/* <blad  /> */}
+                
+                <RainforestSVG />
+                <BurningForestSVG/>
+                
+            </div>
     );
 };
 
