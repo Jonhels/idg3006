@@ -3,9 +3,11 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    
 }
-
+/* 
+#bakkgrunn{
+    display: ;
+} */
 
 /* nav */
 nav {
@@ -22,6 +24,17 @@ nav a{
 /* RainForest */
 .Rainforest-container {
     position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+
+
+
+#Btn {
+    cursor: pointer;
 }
 
 
@@ -67,7 +80,7 @@ nav a{
     animation: Blad3Up 6s ease-out forwards;
 }
 
-.MørkBlad-img {
+.MorkBlad-img {
     position: absolute;
     top: 1450px;
     left: 60%;
@@ -80,21 +93,56 @@ nav a{
     animation: up 2s ease-out forwards;
 }
 
+.Planet-img {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+
+}
+
+.Planet-img #right-arm{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    animation: planet 3s ease infinite;
+}
+
+@keyframes planet {
+    0% {
+        transform: rotate(0);
+        left: 30%;
+       
+    }
+    50% {
+        transform: rotate(-8deg);
+        left: -10%;
+
+       
+    }
+
+    100% {
+        transform: rotate(0deg);
+        left: 40%;
+    
+    }
+}
 
 .BuskForan-img {
     position: absolute;
-    top: 1400px;
+    top: 135vh;
     animation: downUpSlow 3s ease-out forwards;
 }
 
 .boxSVG-img {
     position: absolute;
-    top: 200px;
-    left: 250px;
+    top: 7%;
+    left: 0px;
+    width: 100vw;
     opacity: 0;
     animation: boxPopUp 2s ease-out forwards;
-    animation-delay: 5s;
+    animation-delay: 3s;
 }
+
 
 
 /* bevegelse opp og ned */
@@ -187,4 +235,9 @@ nav a{
 }
 
 
-
+@media only screen and (max-width: 580px) {
+    .boxSVG-img {
+        width: 100%;
+        height: 20%;
+    }
+}

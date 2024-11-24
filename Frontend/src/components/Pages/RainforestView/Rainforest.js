@@ -1,15 +1,16 @@
 import React from "react";
 import "./rainforest.css";
+
 // import BirdBlue from "./BirdBlue";
 // import Forestview from "./BackgroundForest";
 // import Bush1 from "./Bush";
 import RainforestSVG from "./RainforestSVG";
-import BurningForestSVG from "./BurningForest";
+// import BurningForestSVG from "./BurningForest";
 
 
 
 
-const Rainforest = () => {
+export function Rainforest() {
     return (
             <div className="rainforest">
                 {/* <h2>Welcome to regnskogen</h2> */}
@@ -21,7 +22,9 @@ const Rainforest = () => {
                 {/* <blad  /> */}
                 
                 <RainforestSVG />
-                <BurningForestSVG/>
+                
+                
+                {/* <BurningForestSVG/> */}
                 
             </div>
     );

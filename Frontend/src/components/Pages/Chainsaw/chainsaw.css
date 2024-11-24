@@ -1,0 +1,16 @@
+.Chainsaw-container {
+    position: relative;
+}
+
+.Choice-btn{
+    position: absolute;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 30%;
+    top: 80%;
+    left: 35%;
+}
+
+
+

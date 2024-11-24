@@ -1,0 +1,129 @@
+.Globe-container {
+   padding: 0;
+   margin: 0;
+}
+
+.Globe {
+    width: 100%;
+    height: 100%;
+}
+
+
+.globe-container { 
+    height: 500px;
+    width: 500px;
+    background: linear-gradient(to left, rgb(83, 118, 224) 0%, rgb(53, 101, 152), rgb(4, 36, 71) 70%, rgb(26, 57, 101) 100%) ;
+    border-radius: 100%;
+    position: absolute;
+    background-size: 200% 200%;
+       display: flex;
+       clip-path: circle(58.7%); 
+       overflow: hidden;
+       top: 10%;
+       left: 15%;
+       animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange{
+    0% {
+        background-position: 0% 50% ;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.clode-contain {
+    position: absolute;
+    
+}
+
+
+.map1 {
+    z-index: 2;
+    animation: 15s linear infinite;
+    position: absolute;
+    animation-delay: -1s;
+    left: 77%;
+    width: 500px;
+    height: 500px;
+}
+
+.map2 {
+    z-index: 1;
+    animation: leftSide2 linear infinite;
+    animation-duration: 90s;
+    position: absolute;
+    animation-delay: 1s;
+    left: 10%;
+    
+}
+
+.Cloud1 {
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    opacity: 0.7; 
+    top: 30px;
+    width: 100%;
+    left: 100%;
+    animation: leftSide 10s infinite linear;
+    background-repeat: 0 0 repeat;
+}
+
+
+@keyframes leftSide1{
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+
+@keyframes leftSide2{
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-60%) ;
+    }
+}
+
+@keyframes rotateGlobe {
+    from {
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: 
+        rotate(360deg);
+    }
+}
+
+
+@keyframes rotateLand {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: 
+        rotate(120deg);
+    }
+}
+
+
+
+/* @keyframes pulse {
+    0% {
+        background-color: rgba(88,213, 255, 0.2);
+        transform: scale(1);
+    }
+    
+    50% {
+        background-color: rgba(63, 159, 191, 0.5);
+        transform: scale(1.1);
+    }
+} */
