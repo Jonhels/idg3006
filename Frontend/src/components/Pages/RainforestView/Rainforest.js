@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useSensorContext } from "../../context/SensorContext";
 import "./rainforest.css";
 
+// Optional imports (uncomment if needed)
+// import BirdBlue from "./BirdBlue";
+// import Forestview from "./BackgroundForest";
+// import Bush1 from "./Bush";
+
 import RainforestSVG from "./RainforestSVG";
 // import BurningForestSVG from "./BurningForest";
 
@@ -20,6 +25,7 @@ const Rainforest = ({ setStoryActive }) => {
 
   return (
     <div className="rainforest">
+      {/* Example content; uncomment or modify as needed */}
       {/* <h2>Welcome to the rainforest</h2> */}
       {/* <Forestview /> */}
       {/* <BirdBlue /> */}

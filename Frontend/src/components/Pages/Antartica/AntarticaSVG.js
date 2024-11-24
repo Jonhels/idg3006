@@ -1,8 +1,8 @@
 import React from "react";
-import { ReactComponent as ColdSVG} from "../../assets/svg/Antartica.svg";
+import { ReactComponent as ColdSVG} from "../../../assets/svg/Antartica.svg";
 import "./antartica.css";
 
-const AntarticaSVG = () => {
+export function AntarticaSVG() {
     return (
         <div className="ColdSVG">
             <ColdSVG width="" height="" />
