@@ -7,6 +7,47 @@ html, body {
 }
 
 
+/* test start */
+.rainforest {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.story-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.story-overlay button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+}
+
+.story-overlay button:hover {
+    background-color: #218838;
+}
+/* test end */
+
 /* nav */
 nav {
     display: flex;
