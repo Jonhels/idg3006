@@ -10,7 +10,7 @@ const NavigationHandler = ({ setStoryActive }) => {
   useEffect(() => {
     if (!hasNavigated && combination?.length > 0) {
       console.log("Evaluating Combination:", combination);
-
+  
       if (
         combination.includes("button_a_pressed") &&
         combination.includes("button_b_pressed")
@@ -18,7 +18,7 @@ const NavigationHandler = ({ setStoryActive }) => {
         console.log("Navigating to Rainforest");
         navigate("/rainforest");
         setStoryActive(true);
-        setHasNavigated(true); // Prevent further navigation
+        setHasNavigated(true);
       } else if (
         combination.includes("button_a_pressed") &&
         clickedSensors.includes("P2")
@@ -26,7 +26,7 @@ const NavigationHandler = ({ setStoryActive }) => {
         console.log("Navigating to Dessert");
         navigate("/dessert");
         setStoryActive(true);
-        setHasNavigated(true); // Prevent further navigation
+        setHasNavigated(true);
       } else if (
         combination.includes("button_b_pressed") &&
         clickedSensors.includes("P3")
@@ -34,12 +34,13 @@ const NavigationHandler = ({ setStoryActive }) => {
         console.log("Navigating to Antarctica");
         navigate("/cold");
         setStoryActive(true);
-        setHasNavigated(true); // Prevent further navigation
+        setHasNavigated(true);
       } else {
-        console.log("No valid combination found.");
+        console.warn("Invalid combination or navigation condition not met.");
       }
     }
   }, [combination, clickedSensors, navigate, setStoryActive, hasNavigated]);
+  
 
   useEffect(() => {
     if (clickedSensors.includes("P1")) {

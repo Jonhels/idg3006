@@ -17,16 +17,6 @@ import Wildfire from './components/Pages/WildfireChoice/WildfireChoice';
 
 function App() {
   const [storyActive, setStoryActive] = useState(false); // Tracks if a story is active
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to="/rainforest">RainForest</Link>
-    <Link to="/dessert">Dessert</Link>
-    <Link to="/cold">Antartca</Link>
-    <Link to="/Global">Global</Link>
-    <Link to="/ButtonTest">ButtonTest</Link>
-    <Link to="/chainsaw">Chainsaw</Link>
-    <Link to="/IlligalAct">Chainsaw</Link>
-  </nav>
 
   return (
     <SensorProvider>
@@ -35,27 +25,27 @@ function App() {
         <NavigationHandler setStoryActive={setStoryActive} />
         <div className="App">
           <Routes>
-            <Route path="/" element={<SensorDisplay />} />
-            <Route path="/Rainforest" element={<Rainforest storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path="/dessert" element={<Dessertforest storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/cold' element={<Antartica storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/Global' element={<Global storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/button-Test' element={<ButtonTest storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/Chainsaw' element={<Chainsaw storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/IlligalACt' element={<IlligalAct storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/GoodAct' element={<GoodAct storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/Challenge' element={<Challenge storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <Route path='/Wildfire' element={<Wildfire storyActive={storyActive} setStoryActive={setStoryActive} />} />
-            <nav>
+          <nav>
               <Link to="/">Home</Link>
               <Link to="/rainforest">RainForest</Link>
               <Link to="/dessert">Dessert</Link>
               <Link to="/cold">Antartca</Link>
-              <Link to="/Global">Global</Link>
-              <Link to="/ButtonTest">ButtonTest</Link>
+              <Link to="/global">Global</Link>
+              <Link to="/buttonTest">ButtonTest</Link>
               <Link to="/chainsaw">Chainsaw</Link>
-              <Link to="/IlligalAct">Chainsaw</Link>
+              <Link to="/illigalAct">Chainsaw</Link>
             </nav>
+            <Route path="/" element={<SensorDisplay />} />
+            <Route path="/rainforest" element={<Rainforest storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path="/dessert" element={<Dessertforest storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/cold' element={<Antartica storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/global' element={<Global storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/button-Test' element={<ButtonTest storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/chainsaw' element={<Chainsaw storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/illigalACt' element={<IlligalAct storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/goodAct' element={<GoodAct storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/challenge' element={<Challenge storyActive={storyActive} setStoryActive={setStoryActive} />} />
+            <Route path='/wildfire' element={<Wildfire storyActive={storyActive} setStoryActive={setStoryActive} />} />
           </Routes>
         </div>
       </Router>
