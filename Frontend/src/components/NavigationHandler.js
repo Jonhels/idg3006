@@ -1,51 +1,61 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSensorContext } from "../context/SensorContext";
 
-const NavigationHandler = ({
-  storyActive,
-  setStoryActive,
-  pendingPage,
-  setPendingPage,
-  isLocked,
-  setIsLocked,
-  setPressedButtons,
-  setClickedSensors, // Ensure this prop is passed from the parent component
-}) => {
+const NavigationHandler = ({ setStoryActive }) => {
   const navigate = useNavigate();
+  const { combination, clickedSensors, setClickedSensors } = useSensorContext();
+  const [hasNavigated, setHasNavigated] = useState(false);
 
   useEffect(() => {
-    // Navigate to the pending page if one exists and the app is not locked
-    if (pendingPage && !isLocked) {
-      console.log("Navigating to:", pendingPage);
-      setIsLocked(true); // Lock the app to prevent further changes
-      setStoryActive(true); // Activate the story mode
-      navigate(`/${pendingPage}`); // Navigate to the pending page
-      setPendingPage(null); // Clear the pending page
+    if (!hasNavigated && combination?.length > 0) {
+      console.log("Evaluating Combination:", combination);
+
+      if (
+        combination.includes("button_a_pressed") &&
+        combination.includes("button_b_pressed")
+      ) {
+        console.log("Navigating to Rainforest");
+        navigate("/rainforest");
+        setStoryActive(true);
+        setHasNavigated(true); // Prevent further navigation
+      } else if (
+        combination.includes("button_a_pressed") &&
+        clickedSensors.includes("P2")
+      ) {
+        console.log("Navigating to Dessert");
+        navigate("/dessert");
+        setStoryActive(true);
+        setHasNavigated(true); // Prevent further navigation
+      } else if (
+        combination.includes("button_b_pressed") &&
+        clickedSensors.includes("P3")
+      ) {
+        console.log("Navigating to Antarctica");
+        navigate("/cold");
+        setStoryActive(true);
+        setHasNavigated(true); // Prevent further navigation
+      } else {
+        console.log("No valid combination found.");
+      }
     }
-  }, [
-    pendingPage,
-    isLocked,
-    navigate,
-    setIsLocked,
-    setStoryActive,
-    setPendingPage,
-  ]);
+  }, [combination, clickedSensors, navigate, setStoryActive, hasNavigated]);
 
-  const handleReset = () => {
-    console.log("Resetting navigation...");
-    setStoryActive(false); // End the story
-    setIsLocked(false); // Unlock the app
-    setPendingPage(null); // Clear pending navigation
-    setPressedButtons([]); // Reset pressed button states
-    setClickedSensors([]); // Clear clicked sensors state
-    navigate("/"); // Navigate back to the home page
-  };
+  useEffect(() => {
+    if (clickedSensors.includes("P1")) {
+      if (!combination?.length) {
+        console.log("Reset triggered by P1 without a combination");
+        navigate("/");
+        setStoryActive(false);
+      }
 
-  return (
-    <button onClick={handleReset}>
-      {storyActive || isLocked ? "Reset" : "Start"}
-    </button>
-  );
+      // Clear P1 from clickedSensors and reset hasNavigated
+      setClickedSensors((prev) => prev.filter((sensor) => sensor !== "P1"));
+      setHasNavigated(false); // Allow new navigation
+    }
+  }, [clickedSensors, combination, navigate, setStoryActive, setClickedSensors]);
+
+  return null; // No UI for this component
 };
 
 export default NavigationHandler;
