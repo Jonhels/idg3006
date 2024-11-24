@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSensorContext } from "../../context/SensorContext";
 import "./rainforest.css";
-import RainforestSVG from "./RainforestSVG";
-import BurningForestSVG from "./BurningForest";
 
+import RainforestSVG from "./RainforestSVG";
+// import BurningForestSVG from "./BurningForest";
 
 const Rainforest = ({ setStoryActive }) => {
   const { clickedSensors } = useSensorContext();
@@ -20,9 +20,12 @@ const Rainforest = ({ setStoryActive }) => {
 
   return (
     <div className="rainforest">
-      {/* Main Content */}
+      {/* <h2>Welcome to the rainforest</h2> */}
+      {/* <Forestview /> */}
+      {/* <BirdBlue /> */}
+      {/* <Bush1 /> */}
       <RainforestSVG />
-      <BurningForestSVG />
+      {/* <BurningForestSVG /> */}
     </div>
   );
 };
