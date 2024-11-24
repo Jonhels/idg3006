@@ -1,114 +1,101 @@
-import './App.css';
-import React, { useState } from 'react';
-import Rainforest from './components/RainforestView/Rainforest';
-import SensorDisplay from './components/SensorDisplay';
+import "./App.css";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Dessertforest from './components/dessert/Dessertforest';
-import Antartica from './components/Antartica/Antartica';
+import Rainforest from "./components/RainforestView/Rainforest";
+import SensorDisplay from "./components/SensorDisplay";
+import Dessertforest from "./components/dessert/Dessertforest";
+import Antartica from "./components/Antartica/Antartica";
+import NavigationHandler from "./components/NavigationHandler";
 
 function App() {
-    const [activePage, setActivePage] = useState('home');
-    const [storyActive, setStoryActive] = useState(false);
-    const [pressedButtons, setPressedButtons] = useState([]);
-    const [clickedSensors, setClickedSensors] = useState([]);
-    const [pendingPage, setPendingPage] = useState(null); // Stores the page to switch to
-    const [isLocked, setIsLocked] = useState(false); // Lock state to prevent multiple combinations
+  const [storyActive, setStoryActive] = useState(false); // Tracks if a story is active
+  const [pressedButtons, setPressedButtons] = useState([]); // Tracks pressed button combinations
+  const [clickedSensors, setClickedSensors] = useState([]); // Tracks clicked sensors
+  const [pendingPage, setPendingPage] = useState(null); // Tracks the pending page for navigation
+  const [isLocked, setIsLocked] = useState(false); // Prevents new combinations during active story
 
-    const handleStartButton = (sensorId) => {
-      if (sensorId === "P1") { // Check if the Start button (P1) is pressed
-          if (storyActive) {
-              // Reset story and unlock system
-              setStoryActive(false);
-              setActivePage('home');
-              setPendingPage(null);
-              setIsLocked(false); // Unlock for new combinations
-          } else if (pendingPage && !isLocked) {
-              // Navigate to the pending page and lock
-              setActivePage(pendingPage);
-              setPendingPage(null);
-              setIsLocked(true); // Lock to prevent further changes
-          }
-      }
+  // Handle incoming button combinations
+  const handleCombination = (combination) => {
+    console.log("Combination received:", combination);
+    if (
+      combination.includes("button_a_pressed") &&
+      combination.includes("button_b_pressed")
+    ) {
+      console.log("Valid combination detected: rainforest");
+      setPendingPage("rainforest"); // Sets the target page to Rainforest
+    } else {
+      console.log("Invalid combination or no action needed.");
+    }
   };
-  
 
-    const handleCombination = (combination) => {
-        if (!isLocked) { // Only set pending page if unlocked
-            if (combination.includes("button_a_pressed") && combination.includes("button_b_pressed")) {
-                setPendingPage("rainforest"); // Set pending page for Rainforest
+  return (
+    <Router>
+      {/* Navigation Handler to manage story and reset logic */}
+      <NavigationHandler
+        storyActive={storyActive}
+        setStoryActive={setStoryActive}
+        pendingPage={pendingPage}
+        setPendingPage={setPendingPage}
+        isLocked={isLocked}
+        setIsLocked={setIsLocked}
+        setPressedButtons={setPressedButtons} // Reset button state when resetting
+        setClickedSensors={setClickedSensors} // Reset sensor state when resetting
+      />
+
+      <div className="App">
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/rainforest">RainForest</Link>
+          <Link to="/dessert">Dessert</Link>
+          <Link to="/cold">Antartca</Link>
+        </nav>
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <SensorDisplay
+                onCombination={handleCombination} // Handle button combinations
+                onPressedButtons={setPressedButtons} // Update pressed buttons
+                onClickedSensors={setClickedSensors} // Update clicked sensors
+              />
             }
-            // Add logic for other pages
-        }
-    };
-
-    const handlePressedButtons = (buttons) => {
-        setPressedButtons(buttons);
-    };
-
-    const handleClickedSensors = (sensors) => {
-        setClickedSensors(sensors);
-    };
-
-    return (
-        <Router>
-            <div className="App">
-                <nav>
-                    <button onClick={handleStartButton}>
-                        {storyActive || isLocked ? "Reset" : "Start"}
-                    </button>
-                    <Link to="/">Home</Link>
-                    <Link to="/rainforest">RainForest</Link>
-                    <Link to="/dessert">Dessert</Link>
-                    <Link to="/cold">Antartca</Link>
-                </nav>
-
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <SensorDisplay
-                                onCombination={handleCombination}
-                                onPressedButtons={handlePressedButtons}
-                                onClickedSensors={handleClickedSensors}
-                                onStartButton={handleStartButton}
-                            />
-                        }
-                    />
-                    <Route
-                        path="/rainforest"
-                        element={
-                            <Rainforest
-                                storyActive={storyActive}
-                                setStoryActive={setStoryActive}
-                                pressedButtons={pressedButtons}
-                                clickedSensors={clickedSensors}
-                            />
-                        }
-                    />
-                    <Route
-                        path="/dessert"
-                        element={
-                            <Dessertforest
-                                storyActive={storyActive}
-                                pressedButtons={pressedButtons}
-                                clickedSensors={clickedSensors}
-                            />
-                        }
-                    />
-                    <Route
-                        path="/cold"
-                        element={
-                            <Antartica
-                                storyActive={storyActive}
-                                pressedButtons={pressedButtons}
-                                clickedSensors={clickedSensors}
-                            />
-                        }
-                    />
-                </Routes>
-            </div>
-        </Router>
-    );
+          />
+          <Route
+            path="/rainforest"
+            element={
+              <Rainforest
+                storyActive={storyActive} // Tracks story state
+                setStoryActive={setStoryActive} // Allows resetting story state
+                pressedButtons={pressedButtons} // Pass button states
+                clickedSensors={clickedSensors} // Pass sensor states
+              />
+            }
+          />
+          <Route
+            path="/dessert"
+            element={
+              <Dessertforest
+                storyActive={storyActive}
+                pressedButtons={pressedButtons}
+                clickedSensors={clickedSensors}
+              />
+            }
+          />
+          <Route
+            path="/cold"
+            element={
+              <Antartica
+                storyActive={storyActive}
+                pressedButtons={pressedButtons}
+                clickedSensors={clickedSensors}
+              />
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
