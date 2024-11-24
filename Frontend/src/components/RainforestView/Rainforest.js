@@ -1,30 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSensorContext } from "../../context/SensorContext";
 import "./rainforest.css";
-// import BirdBlue from "./BirdBlue";
-// import Forestview from "./BackgroundForest";
-// import Bush1 from "./Bush";
 import RainforestSVG from "./RainforestSVG";
 import BurningForestSVG from "./BurningForest";
 
 
+const Rainforest = ({ setStoryActive }) => {
+  const { clickedSensors } = useSensorContext();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (clickedSensors.includes("P1")) {
+      console.log("Reset triggered in Rainforest");
+      setStoryActive(false);
+      navigate("/");
+    }
+  }, [clickedSensors, navigate, setStoryActive]);
 
-const Rainforest = () => {
-    return (
-            <div className="rainforest">
-                {/* <h2>Welcome to regnskogen</h2> */}
-                {/* <Forestview   />
-                <BirdBlue   />
-                <Bush1 /> */}
-                {/* <RainforestSVG /> */}
-                {/* Conditional rendering */}
-                {/* <blad  /> */}
-                
-                <RainforestSVG />
-                <BurningForestSVG/>
-                
-            </div>
-    );
+  return (
+    <div className="rainforest">
+      {/* Main Content */}
+      <RainforestSVG />
+      <BurningForestSVG />
+    </div>
+  );
 };
 
 export default Rainforest;
