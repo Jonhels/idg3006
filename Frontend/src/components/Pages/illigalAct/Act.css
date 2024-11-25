@@ -3,7 +3,6 @@
     
 }
 
-
 .Treefall-img {
     position: absolute;
     left: 55%;
@@ -14,7 +13,7 @@
 
 .Man-img {
     position: absolute;
-    top: 37%;
+    top: 30%;
     left: 56%;
 }
 
@@ -28,10 +27,11 @@
 
 .RunBoy {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 30%;
     animation: run 4s forwards ease;
 }
+
 
 @keyframes run {
     0% {
@@ -66,7 +66,7 @@
 
     100% {
         transform: rotate(-60deg);
-        top: 20%;
+        top: 13%;
         left: 45%;
     }
 }

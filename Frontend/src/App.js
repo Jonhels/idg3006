@@ -14,6 +14,7 @@ import IlligalAct from './components/Pages/illigalAct/IlligalAct';
 import GoodAct from './components/Pages/GoodAct/GoodAct';
 import Challenge from './components/Pages/NextChallenge/Challenge';
 import Wildfire from './components/Pages/WildfireChoice/WildfireChoice';
+import DestroyedForest from './components/Pages/DestroyedForest/DestroyedForest';
 
 function App() {
   const [storyActive, setStoryActive] = useState(false); // Tracks if a story is active
@@ -37,7 +38,7 @@ function App() {
             <Link to="/challenge">Challenge</Link>
             <Link to="/wildfire">Wildfire</Link>
           </nav>
-          <Routes>
+          <Routes>        
             <Route
               path="/rainforest"
               element={<Rainforest storyActive={storyActive} setStoryActive={setStoryActive} />}
@@ -77,6 +78,10 @@ function App() {
             <Route
               path="/wildfire"
               element={<Wildfire storyActive={storyActive} setStoryActive={setStoryActive} />}
+            />
+            <Route
+              path="/DestroyedForest"
+              element={<DestroyedForest storyActive={storyActive} setStoryActive={setStoryActive} />}
             />
           </Routes>
         </div>

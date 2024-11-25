@@ -10,10 +10,10 @@ export function WildfireChoiceSVG() {
     return (
         <div className="GoodAct-container">
            
-           <WildFire/>
+           <WildFire className="WildFire-img"/>
            
             <div className="Choice-btn">
-                <Link to={"/IlligalAct"}>
+                <Link to={"/DestroyedForest"}>
                     <Badbtn className="BadBtn-img"/>
                 </Link>
                 <Link to={"/GoodAct"}>
