@@ -5,3 +5,7 @@
     border: 1px solid #ccc; /* Optional border for visibility */
   }
   
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }

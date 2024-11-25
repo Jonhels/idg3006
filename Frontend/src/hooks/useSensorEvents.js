@@ -3,7 +3,6 @@ import { io } from "socket.io-client";
 
 const socket = io("http://127.0.0.1:4000");
 
-
 export const useSensorEvents = () => {
   const [pressedButtons, setPressedButtons] = useState([]);
   const [clickedSensors, setClickedSensors] = useState([]);
@@ -17,13 +16,13 @@ export const useSensorEvents = () => {
       if (type === "event") {
         // Handle button press events
         if (eventType === "button_a_pressed" || eventType === "button_b_pressed") {
-          setPressedButtons((pressedButtons) => [...new Set([...pressedButtons, eventType])]); // Ensure unique buttons
+          setPressedButtons((prev) => [...new Set([...prev, eventType])]); // Ensure unique buttons
           console.log("Pressed Buttons Updated:", [...new Set([...pressedButtons, eventType])]);
         }
 
         // Handle sensor clicks
         if (eventType === "click_detected" && sensorId) {
-          setClickedSensors((clickedSensors) => [...new Set([...clickedSensors, sensorId])]);
+          setClickedSensors((prev) => [...new Set([...prev, sensorId])]);
           console.log("Clicked Sensors Updated:", [...new Set([...clickedSensors, sensorId])]);
 
           // Trigger combination evaluation when P1 is clicked
@@ -49,5 +48,14 @@ export const useSensorEvents = () => {
     };
   }, [pressedButtons]);
 
-  return { pressedButtons, setPressedButtons, clickedSensors, setClickedSensors, lightLevel, combination };
+  // Return all states and setters, including setCombination
+  return {
+    pressedButtons,
+    setPressedButtons,
+    clickedSensors,
+    setClickedSensors,
+    lightLevel,
+    combination,
+    setCombination, // Make setCombination accessible
+  };
 };

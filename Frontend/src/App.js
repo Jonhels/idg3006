@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState } from "react";
 import Rainforest from './components/Pages/RainforestView/Rainforest';
-import SensorDisplay from './components/SensorDisplay';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import NavigationHandler from "./components/NavigationHandler";
 import { SensorProvider } from "./context/SensorContext";
@@ -30,7 +29,7 @@ function App() {
             <Link to="/rainforest">RainForest</Link>
             <Link to="/dessert">Dessert</Link>
             <Link to="/cold">Antartca</Link>
-            <Link to="/global">Global</Link>
+            <Link to="/">Global</Link>
             <Link to="/button-test">ButtonTest</Link>
             <Link to="/chainsaw">Chainsaw</Link>
             <Link to="/illegal-act">Illegal Act</Link>
@@ -39,7 +38,6 @@ function App() {
             <Link to="/wildfire">Wildfire</Link>
           </nav>
           <Routes>
-            <Route path="/" element={<SensorDisplay />} />
             <Route
               path="/rainforest"
               element={<Rainforest storyActive={storyActive} setStoryActive={setStoryActive} />}
@@ -53,7 +51,7 @@ function App() {
               element={<Antartica storyActive={storyActive} setStoryActive={setStoryActive} />}
             />
             <Route
-              path="/global"
+              path="/"
               element={<Global storyActive={storyActive} setStoryActive={setStoryActive} />}
             />
             <Route
