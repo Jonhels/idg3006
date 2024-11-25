@@ -1,0 +1,11 @@
+.Sensor {
+    max-height: 80vh; /* Limit height to 80% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px; /* Optional padding */
+    border: 1px solid #ccc; /* Optional border for visibility */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }

@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 dotenv = require("dotenv");
 
 const dbConnect = async () => {
