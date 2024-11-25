@@ -11,6 +11,7 @@ import IlligalAct from './components/Pages/illigalAct/IlligalAct';
 import GoodAct from './components/Pages/GoodAct/GoodAct';
 import Challenge from './components/Pages/NextChallenge/Challenge';
 import Wildfire from './components/Pages/WildfireChoice/WildfireChoice';
+import DestroyedForest from './components/Pages/DestroyedForest/DestroyedForest';
 
 function App() {
   <nav>
@@ -38,6 +39,7 @@ function App() {
               <Route path='/GoodAct' element={<GoodAct/>} />
               <Route path='/Challenge' element={<Challenge/>} />
               <Route path='/Wildfire' element={<Wildfire/>} />
+              <Route path='/DestroyedForest' element={<DestroyedForest/>} />
           </Routes>
         </div>
     </Router>
