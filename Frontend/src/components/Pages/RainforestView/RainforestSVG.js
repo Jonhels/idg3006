@@ -7,8 +7,9 @@ import { ReactComponent as Blad1SVG} from "../../../assets/svg/blad1.svg";
 import { ReactComponent as Blad3SVG} from "../../../assets/svg/blad3.svg";
 import { ReactComponent as MorkBladSVG} from "../../../assets/svg/BladMørk.svg";
 // import { ReactComponent as Planet} from "../../../assets/svg/planet.svg";
-import { ReactComponent as BoxSVG} from "../../../assets/svg/BoxChainsaw.svg";
+// import { ReactComponent as BoxSVG} from "../../../assets/svg/BoxChainsaw.svg";
 import { Link } from "react-router-dom";
+// import Audio from "../../../audios/Kid's Stihl chainsaw #stihl #waylonsworld #apple #18months.mp3";
 
 
 import "./rainforest.css";
@@ -23,11 +24,20 @@ const RainforestSVG = () => {
                     <BladerForanSVG className="BladerForan-img"/>
                     <BuskForanSVG className="BuskForan-img"/>
                     {/* <Planet className="Planet-img"/> */}
-                <Link to={"/Chainsaw"}>
-                    <BoxSVG className="boxSVG-img"/>
-                </Link>
-
+            
+                    <div className="boxSVG-img">
+                        <h1>You hear a chainsaw</h1>
+                    </div>  
+                    <Link to={"/Witnes"}>
+                          <button className="boxSVG-img btn">Explore the RainForest</button>
+                            <button className="btnGood-IlligalAct">Press A</button>      
+                    </Link>
+                    {/* <audio controls autoPlay>
+                    <source src="{Audio}" type="audio/mpeg"></source>
+                    Your browser does not support
+                </audio> */}
                 <ForestSVG width="" height=""/>
+            
             </div>
     );
 }

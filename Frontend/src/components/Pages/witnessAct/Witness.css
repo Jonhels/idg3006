@@ -1,0 +1,11 @@
+
+.witness-btn{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 85%;
+    left: 20%;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}

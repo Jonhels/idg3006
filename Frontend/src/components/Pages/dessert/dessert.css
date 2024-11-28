@@ -1,3 +1,8 @@
+.dessert-container {
+    margin: 0;
+    padding: 0;
+
+}
 
 #palme_1{
     animation: palme 5s infinite;
@@ -40,4 +45,124 @@
     100% {
         transform: skew(0deg);
     }
+}
+
+
+
+
+.sunImg {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    opacity: 0;
+    animation: sunRise 3s ease-in forwards;
+}
+
+
+
+@keyframes sunRise{
+    0% {
+        top: 54%;
+        opacity: 0;
+    }
+
+    50% {
+        top: 40%;
+        opacity: 0;
+    }
+
+
+    100% {
+        top: 20%;
+        opacity: 1;
+    }
+}
+
+
+.information-dessert {
+    position: absolute;
+    top: 40%;
+    width: 100px;
+    height: 100px;
+    left: 20%;
+    padding: 10px;
+    background-color: white;
+    
+}
+
+.dessertImgb {
+    position: absolute;
+    top: 15%;
+    
+} 
+
+.landscape-container {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    animation: BkChange 3s forwards ease-in;
+}
+
+
+
+
+@keyframes BkChange {
+    0% {
+        background: rgb(23, 23, 58);
+    }
+
+    100% {
+        background: #FFEBC0;
+    }
+}
+
+
+
+.tempRise {
+    position: absolute;
+    width: 50px;
+    height: 20vh;
+    top: 30%;
+    border-radius: 30px;
+    left: 70%;
+    border: 1px solid black;
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.9) 40%, rgba(255, 255, 255, 0.9) 100%);
+    animation: tempRise 4s forwards;
+} 
+
+.tempRise::before {  
+    
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    display: block;
+    top: 70%;
+    right: -10px;
+
+} 
+
+
+@keyframes tempRise {
+   0% {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.9) 10%, rgba(255, 255, 255, 0.9) 100%);
+    height: 20vh;
+   }
+   20% {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.9) 10%, rgba(255, 255, 255, 0.9) 100%);
+    height: 20vh;
+   }
+   50% {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.9) 10%, rgba(255, 255, 255, 0.9) 100%);
+    height: 20vh;
+   }
+   70% {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.9) 10%, rgba(255, 0, 0, 0.9) 100%);
+    height: 20vh;
+   }
+   100% {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.9) 10%, rgba(250, 0, 0, 0.9) 100%);
+    height: 20vh;
+   }
 }

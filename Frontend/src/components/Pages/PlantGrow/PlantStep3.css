@@ -1,0 +1,42 @@
+.planting {
+    position: absolute;
+    left: 46%;
+    top: 50%;
+    opacity: 0;
+    animation: plantGrow 3s 2s forwards;
+}
+
+@keyframes plantGrow {
+    0% {
+        opacity: 0;
+        top: 46%;
+        scale: 0.5;
+    }
+    100% {
+        opacity: 1;
+        scale: 1.1;
+       
+    }
+    
+}
+
+
+.OldTree {
+    position: absolute;
+    left: 46%;
+    top: 52%;
+    opacity: 1;
+    animation: remove 3s 1s forwards;
+}
+
+
+@keyframes remove {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+       
+    }
+    
+}

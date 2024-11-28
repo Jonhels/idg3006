@@ -1,20 +1,20 @@
 import React from "react";
 import "./Challenge.css";
 import { Link } from "react-router-dom";
-import { ReactComponent as ChallengeImg} from "../../../assets/svg/NextChallenge.svg";
-import { ReactComponent as BtnCont} from "../../../assets/svg/Btn-Continue.svg";
-
+import { ReactComponent as ChallengeImg} from "../../../assets/svg/Forground.svg";
 
 export function ChallengeSVG() {
     return (
         <div className="GoodAct-container">
             <ChallengeImg />
-            <div className="Choice-btn">
-                <Link to={"/Wildfire"}>
-                    <BtnCont className="BadBtn-img"/>
-                </Link>
-               
-            </div>
+            <div className="btn-box">
+                <h1>Start next challenge</h1>
+            </div> 
+
+                    <Link to={"/Wildfire"}>
+                        <button className="btn">Explore more about RainForest</button>
+                        <button className="btnGood-IlligalAct">Press A</button> 
+                    </Link> 
         </div>
     );
 }

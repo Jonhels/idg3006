@@ -1,7 +1,14 @@
-.Globe-container {
-   padding: 0;
-   margin: 0;
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient( #add2f0 0%, #80c2f7 58%, #171A54 100% );
 }
+.main-header {
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0;
+}
+
 
 .Globe {
     width: 100%;
@@ -10,18 +17,47 @@
 
 
 .globe-container { 
-    height: 500px;
-    width: 500px;
-    background: linear-gradient(to left, rgb(83, 118, 224) 0%, rgb(53, 101, 152), rgb(4, 36, 71) 70%, rgb(26, 57, 101) 100%) ;
+    height: 50%;
+    width: 20%;
+    background: linear-gradient(to left, rgb(83, 118, 224) 0%, rgb(53, 101, 152), rgb(47, 132, 224) 70%, rgb(43, 120, 226) 100%) ;
     border-radius: 100%;
     position: absolute;
     background-size: 200% 200%;
-       display: flex;
        clip-path: circle(58.7%); 
        overflow: hidden;
        top: 10%;
-       left: 15%;
+       left: 10%;
        animation: colorChange 5s infinite alternate;
+}
+
+.btn-start {
+    padding: 20px;
+    margin: 40px;
+    width: 20vw;
+    font-size: 4em;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.PresStart {
+    font-size: 1.5em;
+}
+
+@media (min-width:1000px) {
+    .globe-container { 
+        height: 43%;
+        width: 27%;
+        background: linear-gradient(to left, rgb(83, 118, 224) 0%, rgb(53, 101, 152), rgb(26, 106, 192) 70%, rgb(48, 110, 197) 100%) ;
+        border-radius: 100%;
+        position: absolute;
+        background-size: 200% 200%;
+           clip-path: circle(58.7%); 
+           overflow: hidden;
+           top: 10%;
+           left: 10%;
+           animation: colorChange 5s infinite alternate;
+    }
 }
 
 @keyframes colorChange{
@@ -59,18 +95,28 @@
     
 }
 
-.Cloud1 {
+.games-container{
     position: absolute;
-    overflow: hidden;
-    z-index: 3;
-    opacity: 0.7; 
-    top: 30px;
-    width: 100%;
-    left: 100%;
-    animation: leftSide 10s infinite linear;
-    background-repeat: 0 0 repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    left: 39%;
+    top: 18%;
+    padding: 10px;
 }
 
+.images-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.image-item {
+    width: 350px;
+    height: 200px;
+}
 
 @keyframes leftSide1{
     0% {

@@ -21,11 +21,7 @@ const Rainforest = ({ setStoryActive }) => {
   useEffect(() => {
     if (pressedButtons.includes("button_a_pressed")) {
       console.log("Navigating to Illegal Act from Rainforest");
-      navigate("/illegal-act");
-      setPressedButtons([]); // Clear pressed buttons after navigation
-    } else if (pressedButtons.includes("button_b_pressed")) {
-      console.log("Navigating to Good Act from Rainforest");
-      navigate("/good-act");
+      navigate("/Witnes");
       setPressedButtons([]); // Clear pressed buttons after navigation
     }
   }, [pressedButtons, navigate, setPressedButtons]);

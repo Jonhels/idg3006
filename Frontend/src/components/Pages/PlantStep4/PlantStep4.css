@@ -1,0 +1,46 @@
+
+.GrownUpTree {
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    /* animation: growingBig 3s forwards; */
+}
+
+/* @keyframes growingBig {
+    0% {
+        scale: 2.1px;
+    }
+    100% {
+        scale: 3.3px;
+    }
+} */
+
+.step4-box-container {
+    position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.5em;
+text-align: center;
+padding: 10px;
+top: 75%;
+width: 50vw;
+height: 16vh;
+border-radius: 20px;
+background-color:rgb(86, 48, 140);
+color: white;
+left: 25%;
+}
+
+
+.plant-btn {
+    position: absolute;
+    top: 92%;
+    left: 33%;
+    font-size: 2.5em;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}

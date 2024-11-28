@@ -193,13 +193,12 @@ nav a{
     0% {
         transform: rotate(0);
         left: 30%;
-       
+
     }
     50% {
         transform: rotate(-8deg);
         left: -10%;
 
-       
     }
 
     100% {
@@ -217,18 +216,39 @@ nav a{
 
 .boxSVG-img {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
     top: 7%;
-    left: 0px;
-    width: 100vw;
+    left: 10%;
+    width: 80vw;
+    height: 50vh;
+    border-radius: 20px;
     opacity: 0;
     animation: boxPopUp 2s ease-out forwards;
-    animation-delay: 3s;
+    animation-delay: 2s;
+    background-color: white;
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 27%;
+    top: 49%;
+    width: 80vh;
+    height: 10vw;
+    padding: 20px;
+    font-size: 4em;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(94, 29, 168);
 }
 
 
-
 /* bevegelse opp og ned */
-
 @keyframes boxPopUp {
     0% {
         transform: scale(0);

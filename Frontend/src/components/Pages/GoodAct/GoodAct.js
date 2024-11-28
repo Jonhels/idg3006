@@ -6,18 +6,23 @@ import GoodActSVG from "./GoodActSVG";
 import { usePageReset } from "../../../hooks/usePageReset";
 
 const GoodAct = ({ setStoryActive }) => {
-  const { pressedButtons, setPressedButtons, clickedSensors } = useSensorContext();
-  const navigate = useNavigate();
-  usePageReset({ setStoryActive });
+  const { clickedSensor, pressedButtons, setPressedButtons } = useSensorContext();
+    const navigate = useNavigate();
 
-  // Handle navigation to Challenge
-  useEffect(() => {
-    if (pressedButtons.includes("button_a_pressed")) {
-      console.log("Navigating to Challenge from Good Act");
-      navigate("/challenge");
-      setPressedButtons([]); // Clear pressed buttons after navigation
-    }
-  }, [pressedButtons, navigate, setPressedButtons]);
+    usePageReset({ setStoryActive });
+
+    // Handle navigation to Challenge
+    useEffect(() => {
+        if (pressedButtons.includes("button_a_pressed")) {
+            console.log("Navigating to challenge from DestroyedForest");
+            navigate("/Challenge");
+            setPressedButtons([]);
+        } else if (pressedButtons.includes("button_b_pressed")) {
+            console.log("Navigating to wildfire from Good-act");
+            navigate("/Challenge");
+            setPressedButtons([]);
+        }
+    }, [pressedButtons, navigate, setPressedButtons]);
 
   return (
     <div className="GoodAct-container">

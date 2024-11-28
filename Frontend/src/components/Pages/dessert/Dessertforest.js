@@ -1,6 +1,6 @@
 import React from "react";
 import "./dessert.css"
-import DessertforestSVG from "./dessertSVG";
+import DessertforestSVG from "./DessertSVG";
 import { usePageReset } from "../../../hooks/usePageReset";
 
 const Dessertforest = ({ setStoryActive }) => {

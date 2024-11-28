@@ -1,0 +1,29 @@
+.fire-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    padding: 10px;
+    top: 65%;
+    width: 50vw;
+    height: 16vh;
+    border-radius: 20px;
+    background-color:rgb(86, 48, 140);
+    color: white;
+    left: 25%;
+    
+}
+
+
+.fire-btn {
+    position: absolute;
+    top: 85%;
+    left: 33%;
+    font-size: 2.5em;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}

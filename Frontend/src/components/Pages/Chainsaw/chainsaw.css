@@ -1,16 +1,55 @@
 .Chainsaw-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    text-align: center;
 }
 
-.Choice-btn{
+.Choiced-btn{
     position: absolute;
     display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    width: 30%;
-    top: 60%;
-    left: 27%;
+    flex-direction: row;
+    top: 85%;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 
+.goodBtn-img, .BadBtn-img {
+    width: 60px;
+    height: 60px;
+}
 
+.btnGood, .btnBad {
+    
+    font-size: 20px;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.ChainsawBox-img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    padding: 10px;
+    top: 65%;
+    width: 50vw;
+    height: 16vh;
+    border-radius: 20px;
+    background-color:rgb(86, 48, 140);
+    color: white;
+}

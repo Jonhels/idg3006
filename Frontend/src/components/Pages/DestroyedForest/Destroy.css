@@ -1,0 +1,68 @@
+.destroyedFire-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+
+
+.btn-fireWitness {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    padding: 10px;
+    left: 24%;
+    top: 65%;
+    width: 51.5vw;
+    height: 18vh;
+    border-radius: 20px;
+    background-color:rgb(86, 48, 140);
+    color: white;
+}
+
+.Star-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 41%;
+    bottom: 9%;
+
+}
+
+
+
+.Destroyed-btn{
+    position: absolute;
+    top: 85%;
+    left: 45%;
+    font-size: 2.5em;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.infoDestroyed-box {
+    position: absolute;
+    background-color: #E18A0A;
+    left: 6%;
+    height: 400px;
+    width: 400px;
+    
+    text-align: center;
+    top: 5%;
+    display: flex;
+    border-radius: 100%;
+}
+
+
+.info-header {
+    position: absolute;
+    top: 20%;
+    font-size: 1.5em;
+}

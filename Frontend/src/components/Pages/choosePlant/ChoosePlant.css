@@ -1,0 +1,53 @@
+
+.LightSensor {
+    position: absolute;
+    top: 67%;
+    left: 16%;
+    
+}
+
+.LightSensor2 {
+    position: absolute;
+    top: 67%;
+    left: 76%;
+    
+}
+
+.LightSensor-icon {
+    position: absolute;
+    bottom: 60px;
+    right: 70%;
+}
+
+.Lighticon {
+    width: 90px;
+}
+
+
+.ChoosePlant-Box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    padding: 10px;
+    left: 24%;
+    top: 65%;
+    width: 51.5vw;
+    height: 18vh;
+    border-radius: 20px;
+    background-color:rgb(86, 48, 140);
+    color: white;
+}
+
+.choose-btn {
+    position: absolute;
+    top: 85%;
+    left: 30%;
+    font-size: 2.5em;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}

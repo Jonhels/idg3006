@@ -1,0 +1,120 @@
+.GoodAct-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.GoodAct-btn{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 85%;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+.goodBtn-img, .BadBtn-img {
+    width: 60px;
+    height: 60px;
+}
+
+.btnGood, .btnBad {
+    
+    font-size: 20px;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.GoodActBox-img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    padding: 10px;
+    top: 65%;
+    width: 50vw;
+    height: 16vh;
+    border-radius: 20px;
+    background-color:rgb(86, 48, 140);
+    color: white;
+}
+
+.Man-boxText {
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    text-align: center;
+    max-width: 300px;
+    border-radius: 25px 30px 20px 0px;
+    border-color: black;
+   display: inline-block;
+   box-shadow: 0 4px 6px black;
+   color: rgb(0, 0, 0);
+    position: absolute;
+    border-width: 50px 10px 0 10px;
+    top: 26%;
+    left: 60%;
+    animation: appear 5s forwards ease-in-out;
+}
+
+.Kid-boxText {
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    text-align: center;
+    max-width: 300px;
+    border-radius: 25px 30px 0px 20px;
+    border-color: black;
+   display: inline-block;
+   box-shadow: 0 4px 6px black;
+   color: rgb(0, 0, 0);
+    position: absolute;
+    border-width: 50px 10px 0 0px;
+    top: 36%;
+    left: 27%;
+    animation: appear 5s forwards ease-in-out;
+}
+
+.box-fact {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(203, 238, 237);
+    box-shadow: 0 4px 5px;
+    position: absolute;
+    border-radius: 50%;
+    top: 5%;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    animation: appear 1s forwards ease-in-out;
+    opacity: 0;
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+

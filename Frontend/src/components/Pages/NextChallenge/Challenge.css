@@ -1,0 +1,13 @@
+.btn-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    top: 7%;
+    left: 10%;
+    width: 80vw;
+    height: 50vh;
+    border-radius: 20px;
+    background-color: white;
+}
