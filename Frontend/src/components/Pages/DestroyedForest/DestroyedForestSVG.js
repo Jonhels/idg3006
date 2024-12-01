@@ -9,8 +9,9 @@ import "./Destroy.css";
 const DestroyedForestSVG = () => {
     return (
         <div className="destroyedFire-container">
+
             <div className="infoDestroyed-box">
-                <h2 className="info-header">
+                <h2 className="">
                 Trees capture Carbon dioxide, one of the gases that contribute to a problem known as
                 global warming. The globe heating up leads to increased risk of wildfires!
                 </h2>
@@ -22,6 +23,7 @@ const DestroyedForestSVG = () => {
                     </h1>
                 
                 <div>
+                    
                     <Link to={"/ChoosePlant"} className="Firebtn-container">
                         <button className="Destroyed-btn">Press A</button>
                     </Link> 
@@ -32,7 +34,7 @@ const DestroyedForestSVG = () => {
             {/* <Tree className="Destroy" width=""/> */}
           
         
-         
+            
         </div>
 
     );

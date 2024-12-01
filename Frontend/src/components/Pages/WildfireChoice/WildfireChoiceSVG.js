@@ -24,7 +24,7 @@ export function WildfireChoiceSVG() {
            </div> 
            <div className="fireBox-img">
                     <h1>
-                    You witness an wildfire!  What are you gonna do?
+                    You witness a wildfire!  What are you gonna do?
                     </h1>
             </div>
            <WildFire className="wildFire-img"/>

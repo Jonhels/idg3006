@@ -3,13 +3,21 @@ import { ReactComponent as DestroyBtn} from "../../../assets/svg/DontHelpFire.sv
 import { Link } from "react-router-dom";
 import "./ChoosePlant.css";
 import { ReactComponent as LightSensor2} from "../../../assets/svg/LightSensor.svg";
-
+import { ReactComponent as BadTree} from "../../../assets/svg/BadTree.svg";
+import { ReactComponent as Busk} from "../../../assets/svg/Bad-Busker.svg";
 
 
 const ChoosePlantSVG = () => {
     return (
         <div className="destroyedFire-container">
-            
+             <div className="BadTree">
+                    <BadTree/>
+                    
+                </div>
+                <div className="busk">
+                     <Busk/>
+                </div>
+               
              <div>
                     <h2 className="ChoosePlant-Box">
                     You see the landscape after a wildfire. 
@@ -25,8 +33,8 @@ const ChoosePlantSVG = () => {
                         <button className="choose-btn">Put a Tree in the empty space, then press A</button>
                     </Link> 
                 </div>
-         
-          
+               
+               
            
             <DestroyBtn className="Destroy" width=""/>         
         </div>

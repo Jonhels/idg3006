@@ -3,17 +3,22 @@
     position: absolute;
     left: 35%;
     top: 20%;
-    /* animation: growingBig 3s forwards; */
+    
+    animation: growingBig 3s forwards;
 }
 
-/* @keyframes growingBig {
+@keyframes growingBig {
     0% {
-        scale: 2.1px;
+        scale: 70%;
+        top: 25%;
+        opacity: 0;
     }
     100% {
-        scale: 3.3px;
+        scale: 90%;
+        top: 25%;
+        opacity: 1;
     }
-} */
+}
 
 .step4-box-container {
     position: absolute;

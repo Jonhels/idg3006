@@ -1,0 +1,22 @@
+.fire-container {
+    position: absolute;
+    left: 14.6%;
+    top: 15.8%;
+    opacity: 1;
+   animation: fireDown 3s forwards;
+}
+
+
+@keyframes fireDown {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.boy-container {
+    position: absolute;
+    left: 29%;
+}

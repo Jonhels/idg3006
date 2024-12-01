@@ -31,8 +31,8 @@ body {
 }
 
 .btn-start {
-    padding: 20px;
-    margin: 40px;
+    padding: 10px;
+    margin: 10px;
     width: 20vw;
     font-size: 4em;
     background-color: white;
@@ -98,8 +98,7 @@ body {
 .games-container{
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     flex-direction: column;
     left: 39%;
     top: 18%;

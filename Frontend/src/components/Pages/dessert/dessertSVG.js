@@ -21,7 +21,7 @@ const DessertforestSVG = () => {
                   <SunImg/> 
             </div>
             <div className="information-dessert">
-                <h1>Hello</h1>
+                <h1>The Sahara is the largest hot desert on Earth. It covers about 8,600,000 square kilometers</h1>
             </div>
             <div className="tempRise">
                 <div className="kule"></div>

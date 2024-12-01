@@ -16,7 +16,7 @@ const PlantStep3SVG = () => {
             <Link to={"/PlantStep4"}>
                         <div className="GrabbLight-icon">
                             <TreeBigger className="Grabb-icon"/>
-                            <button className="btn-grabbTree">Give water tree Press A</button>
+                            <button className="btn-grabbTree">Water the tree then Press A</button>
                         </div>
                         <div className="">
                               <Tree className="planting"/>

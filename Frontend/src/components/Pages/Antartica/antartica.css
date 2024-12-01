@@ -7,10 +7,40 @@
     height: 150px;
     width: 300px;
     bottom: 10%;
-    right: 45%;
-    background-color: blue;
+    right: 35%;
+    background-color: rgb(255, 255, 255);
     border-radius: 10% 10% 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.video-img {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    border-radius: 100%;
+}
+
+.videoClip {
+    border-radius: 10% 10% 10% 10%;
+}
+
+.antartica-container-info {
+    width: 450px;
+    height: 450px;
+    background-color: #69BCFF;
+    box-shadow: 0 4px 5px;
+    position: absolute;
+    border-radius: 50%;
+    top: 5%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    animation: appear 1s forwards ease-in-out;
+    opacity: 0;
 }
